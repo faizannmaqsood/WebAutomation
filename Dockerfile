@@ -1,5 +1,5 @@
-# Use a base image with Maven and OpenJDK
-FROM maven:3.8.6-openjdk-11-slim
+# Use an official Maven image with OpenJDK 19
+FROM maven:3.8.6-openjdk-19-slim
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
