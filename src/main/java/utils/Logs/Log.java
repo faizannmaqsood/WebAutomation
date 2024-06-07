@@ -21,13 +21,6 @@ public class Log {
     public static void error (String message) {
         Log.error(message);
     }
-    //Fatal Level Logs
-    public static void fatal (String message) {
-        Log.fatal(message);
-    }
-    //Debug Level Logs
-    public static void debug (String message) {
-        Log.debug(message);
-    }
+
 
 }

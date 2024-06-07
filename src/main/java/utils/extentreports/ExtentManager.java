@@ -9,32 +9,19 @@ public class ExtentManager {
 
     static {
         ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
-        reporter.config().setReportName("ZConnect Extent Report");
+        reporter.config().setReportName("UltimateQA Test Report");
 
         extentReports = new ExtentReports();
         extentReports.attachReporter(reporter);
-        extentReports.setSystemInfo("Project Name", "ZConnect");
-        extentReports.setSystemInfo("Author", "Muhammad Faizan Zubair");
+        extentReports.setSystemInfo("Project Name", "UltimateQA");
+        extentReports.setSystemInfo("Author", "Muhammad Faizan");
     }
 
     public static synchronized ExtentReports getExtentReports() {
         return extentReports;
     }
 
-    /*
-    public synchronized static ExtentReports createExtentReports(){
-        if(extentReports==null) {
-            ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
-            reporter.config().setReportName("ZConnect Extent Report");
-            extentReports.attachReporter(reporter);
-            extentReports.setSystemInfo("Project Name", "ZConnect");
-            extentReports.setSystemInfo("Author", "Muhammad Faizan Zubair");
-        }
-        return extentReports;
 
-    }
-
-     */
 
 
 }

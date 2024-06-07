@@ -60,7 +60,7 @@ public class TestListener implements ITestListener {
 //                getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
         utils.Logs.Log.error(getTestMethodName(iTestResult) + " Test is Failed.");
         System.out.println(getTestMethodName(iTestResult) + " Test is Failed.");
-        getTest().log(Status.FAIL, iTestResult.getThrowable());
+         getTest().log(Status.FAIL, iTestResult.getThrowable());
         // Throwable throwable = iTestResult.getThrowable();
 //        if (iTestResult.getThrowable()!=null){
 ////            String exceptionMessage = throwable.getMessage();

@@ -47,22 +47,7 @@ public class UltimateQATest {
     }
 
 
-    @Test (priority = 0, enabled = false)
-    public void TestBrokenLinksonPage(){
-        // Get all links on the page
-        List<ElementHandle> links = page.querySelectorAll("a");
 
-        // Iterate through each link and check if it's broken
-        for (ElementHandle link : links) {
-            String href = link.getAttribute("href");
-            if (href != null && !href.isEmpty()) {
-                int statusCode = getResponseStatus(href);
-                if (statusCode != 200) {
-                    System.out.println("Broken link found: " + href + " (Status Code: " + statusCode + ")");
-                }
-            }
-        }
-    }
 
     @Test (priority = 1)
     public void TestVerifyingDashboardPage() {
@@ -187,7 +172,7 @@ public class UltimateQATest {
         if (isClickable) {
             page.click("#menu-item-218225");
             System.out.println("Clicked on the element");
-            page.evaluate("window.scrollBy(0, document.body.scrollHeight)");
+
 
             try {
                 Thread.sleep(3000); // Wait for 3 seconds
@@ -269,7 +254,7 @@ public class UltimateQATest {
     }
 
 @Test(priority = 9)
-    public void ScrollToMId(){
+    public void ScrollToBottom(){
 
     ExtentTestManager.startTest("testVerifyScrollToMid",
             "Verifying the browser is");
@@ -344,25 +329,6 @@ public class UltimateQATest {
     }
 
 
-    // Method to get HTTP response status code
-    public static int getResponseStatus(String url) {
-        final int TIMEOUT_MILLIS = 5000; // 5 seconds
-        HttpURLConnection connection = null;
-        try {
-            connection = (HttpURLConnection) new URL(url).openConnection();
-            connection.setRequestMethod("HEAD");
-            connection.setConnectTimeout(TIMEOUT_MILLIS);
-            connection.setReadTimeout(TIMEOUT_MILLIS);
-            return connection.getResponseCode();
-        } catch (Exception e) {
-            e.printStackTrace(); // Log the exception
-            return -1; // Error occurred while checking status
-        } finally {
-            if (connection != null) {
-                connection.disconnect();
-            }
-        }
-    }
 
 
   //  @AfterClass
